@@ -1,4 +1,13 @@
 function onDeviceReady() {
+    var function_name1 = function(){
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    };
+    var el = getElementById('findMe');
+
+    el.addEventListener('click', function_name1, false);
+};
+document.addEventListener("deviceready", onDeviceReady, false);
+
     // onSuccess Callback 
         // This method accepts a Position object, which contains the 
         // current GPS coordinates 
@@ -19,19 +28,6 @@ function onDeviceReady() {
         function onError(error) {
             alert('code: '    + error.code    + '\n' +
                   'message: ' + error.message + '\n');
-        }
-     
-        navigator.geolocation.getCurrentPosition(onSuccess, onError);
-     
+        }     
 
-
-    var function_name1 = function(){
-        navigator.geolocation.getCurrentPosition(onSuccess, onError);
-    };
-
-    var el = getElementById('findMe');
-
-    el.addEventListener('click', function_name1, false);
-};
-document.addEventListener("deviceready", onDeviceReady, false);
 
