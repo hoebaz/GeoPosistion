@@ -1,10 +1,7 @@
 function onDeviceReady() {
-    var function_name1 = function(){
+    document.getElementById('findMe').addEventListener('click', function(){
         navigator.geolocation.getCurrentPosition(onSuccess, onError);
-    };
-    var el = getElementById('findMe');
-
-    el.addEventListener('click', function_name1, false);
+    }, false);
 };
 document.addEventListener("deviceready", onDeviceReady, false);
 
